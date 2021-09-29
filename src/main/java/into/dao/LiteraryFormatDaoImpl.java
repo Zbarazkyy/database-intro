@@ -53,7 +53,7 @@ public class LiteraryFormatDaoImpl implements LiteraryFormatDao {
     }
 
     @Override
-    public boolean delete(Long id) {
+    public boolean delete(Long id) { // удаляем елемет по принципу "soft delete" / remove an element according to the "soft delete" principle
         String deleteFormatRequest = "UPDATE literary_formats SET is_deleted = true WHERE id = ?;";
         try (Connection connection = ConnectionUtil.getConnection();
              PreparedStatement deleteFormatStatement =
